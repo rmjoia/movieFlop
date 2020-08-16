@@ -1,0 +1,3 @@
+<button (click)="vote(movieTitle)" [disabled]="selectedMovie && !(selectedMovie === movieTitle)">
+    {{selectedMovie === movieTitle ? 'Unvote' : 'Vote'}}
+</button>

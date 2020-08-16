@@ -2,15 +2,16 @@
 
     <div class="card">
         <ul>
-            <li>{{title}}</li>
+            <li>{{movieTitle}}</li>
             <li>{{year}}</li>
             <li><img [src]="posterUrl" width="100" /></li>
         </ul>
         <ul>
-            <li><span style="font-weight: bold;" *ngIf="selectedMovie === title">Selected!</span></li>
-            <li><button (click)="vote(title)" [disabled]="selectedMovie && !(selectedMovie === title)">
-                    {{selectedMovie === title ? "Unvote" : "Vote"}}
-                </button></li>
+            <li><span style="font-weight: bold;" *ngIf="selectedMovie === movieTitle">Selected!</span></li>
+            <li>
+                <app-flop-vote [selectedMovie]="selectedMovie" [movieTitle]="movieTitle" (voted)="onVoted($event)">
+                </app-flop-vote>
+            </li>
         </ul>
     </div>
 </div>

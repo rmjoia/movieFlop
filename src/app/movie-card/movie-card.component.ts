@@ -7,25 +7,18 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class MovieCardComponent implements OnInit {
 
-  @Input() title: string
-  @Input() year: number
-  @Input() posterUrl: string
-  @Input() selectedMovie: string
-
-  @Output() voted = new EventEmitter()
+  @Input() movieTitle: string;
+  @Input() year: number;
+  @Input() posterUrl: string;
+  @Input() selectedMovie: string;
+  @Output() voted = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  vote(movieTitle: string) {
-
-    let payload = null;
-    if (this.selectedMovie !== movieTitle) {
-      payload = movieTitle
-    }
-
-    this.voted.emit(payload)
+  onVoted(movieTitle: string): void {
+    this.voted.emit(movieTitle);
   }
 }

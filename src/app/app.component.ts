@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Movie } from '../app/models/movie'
-import { FlopService } from '../app/services/flop.service'
+import { Movie } from '../app/models/movie';
+import { FlopService } from '../app/services/flop.service';
 
 @Component({
   selector: 'app-root',
@@ -12,15 +12,15 @@ export class AppComponent {
 
   constructor(private flopService: FlopService) { }
 
-  getMovieFlops(){
-    return this.flopService.movies
+  getMovieFlops(): Movie[] {
+    return this.flopService.getMovies();
   }
 
-  onVoted(movieTitle: string) {
+  getSelectedMovie(): string {
+    return this.flopService.getSelectedMovie();
+  }
 
-    console.log(movieTitle)
-    this.getMovieFlops().forEach((movie: Movie) => {
-      movie.selectedMovie = movieTitle
-    })
+  onVoted(movieTitle: string): void {
+    this.flopService.setSelectedMovie(movieTitle);
   }
 }

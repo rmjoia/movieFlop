@@ -19,8 +19,8 @@
   <p>Some of the movie flops from 2019</p>
 
   <div class="card-container">
-    <app-movie-card *ngFor="let movie of getMovieFlops()" [title]="movie.title" [year]="movie.year" [posterUrl]="movie.posterUrl"
-      (voted)="onVoted($event)" [selectedMovie]="movie.selectedMovie">
+    <app-movie-card *ngFor="let movie of getMovieFlops()" [movieTitle]="movie.title" [year]="movie.year" [posterUrl]="movie.posterUrl"
+      (voted)="onVoted($event)" [selectedMovie]="getSelectedMovie()">
     </app-movie-card>
   </div>
 

@@ -3,11 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
+import { FlopVoteComponent } from './flop-vote/flop-vote.component';
+import { RentalCartComponent} from './rental-cart/rental-cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MovieCardComponent
+    MovieCardComponent,
+    FlopVoteComponent,
+    RentalCartComponent
   ],
   imports: [
     BrowserModule
